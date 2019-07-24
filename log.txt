@@ -4,3 +4,179 @@
 {'time': 'M:7,D:21|| 18:58', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 769, 'text': '/cat'}
 {'time': 'M:7,D:21|| 18:58', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 771, 'text': 'Hello'}
 {'time': 'M:7,D:21|| 18:58', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 773, 'text': 'Sup'}
+{'time': 'M:7,D:24|| 13:39', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 776, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:39', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 775, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:39', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 777, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:39', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 778, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:40', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 783, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:40', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 785, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:41', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 787, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 789, 'text': '/start'}
+{'time': 'M:7,D:24|| 13:43', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 791, 'text': '/start'}
+{'time': 'M:7,D:24|| 14:6', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 803, 'text': '/help'}
+{'time': 'M:7,D:24|| 14:6', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 806, 'text': '/help'}
+{'time': 'M:7,D:24|| 14:13', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 812, 'text': '/start'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 814, 'text': '/start'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 816, 'text': '/products'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 818, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 820, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 822, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 824, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 826, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 16:42', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 828, 'text': '/help'}
+{'time': 'M:7,D:24|| 16:51', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 830, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 16:51', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 832, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 16:51', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 834, 'text': '/help'}
+{'time': 'M:7,D:24|| 16:51', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 836, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:4', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 838, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:4', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 839, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:5', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 840, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:8', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 842, 'text': '/help'}
+{'time': 'M:7,D:24|| 17:8', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 844, 'text': '/start'}
+{'time': 'M:7,D:24|| 17:8', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 846, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:8', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 848, 'text': '/menu'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 850, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 852, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 854, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 856, 'text': '/atb'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 858, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 17:9', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 860, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 17:10', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 862, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:11', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 865, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 869, 'text': '/start'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 871, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 873, 'text': '/atb'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 875, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 877, 'text': '/products'}
+{'time': 'M:7,D:24|| 17:33', 'username': None, 'name': 'Olga', 'surname': None, 'chat_id': 588247842, 'mess_id': 879, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 881, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 883, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 885, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 887, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 889, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 891, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 893, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:16', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 895, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 897, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 898, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 899, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 900, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 901, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 902, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:24', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 903, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 911, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 913, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 915, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 917, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 919, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 921, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 923, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:25', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 925, 'text': 'Hi'}
+{'time': 'M:7,D:24|| 18:26', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 927, 'text': 'Whats up'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 929, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 931, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 933, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 935, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 937, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 939, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 941, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 943, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 945, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 947, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 949, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 951, 'text': '.ьутг'}
+{'time': 'M:7,D:24|| 18:29', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 953, 'text': '/menu'}
+{'time': 'M:7,D:24|| 18:30', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 955, 'text': '/pidor'}
+{'time': 'M:7,D:24|| 18:31', 'username': 'DiIre', 'name': 'Іщук Дмитро', 'surname': None, 'chat_id': 575239699, 'mess_id': 957, 'text': 'Yarik doday komandy pidr'}
+{'time': 'M:7,D:24|| 18:49', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 970, 'text': 'в'}
+{'time': 'M:7,D:24|| 18:50', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 972, 'text': '/start'}
+{'time': 'M:7,D:24|| 18:50', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 975, 'text': 'Ярик_лох'}
+{'time': 'M:7,D:24|| 18:50', 'username': 'DiIre', 'name': 'Іщук', 'surname': 'Дмитро', 'chat_id': 575239699, 'mess_id': 974, 'text': '/pidor'}
+{'time': 'M:7,D:24|| 18:50', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 978, 'text': 'Ноу сорі бат ю а лох'}
+{'time': 'M:7,D:24|| 18:51', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 980, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 982, 'text': 'Lol'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 984, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 986, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 988, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 990, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 992, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 994, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 996, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 998, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1000, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1002, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1003, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1006, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1007, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1008, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1010, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1013, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1016, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1018, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1020, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1022, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1024, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1026, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1027, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1029, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1031, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1032, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1033, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1036, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1039, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1042, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1044, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1045, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1048, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1050, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1051, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1052, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1056, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1058, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1060, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1062, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1064, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1066, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1067, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1069, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1070, 'text': '/help'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1074, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1076, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1077, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1080, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1082, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1083, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1086, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1088, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1090, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1092, 'text': '/atb'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1094, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1096, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1098, 'text': '/products'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1100, 'text': 'Hey'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1102, 'text': 'Hi'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1104, 'text': 'You'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1106, 'text': 'Are'}
+{'time': 'M:7,D:24|| 18:52', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1108, 'text': 'Bot'}
+{'time': 'M:7,D:24|| 18:53', 'username': 'aOne_two_three_four', 'name': 'Name', 'surname': 'Surname', 'chat_id': 538594065, 'mess_id': 1110, 'text': '!'}
+{'time': 'M:7,D:24|| 19:1', 'username': 'DiIre', 'name': 'Іщук', 'surname': 'Дмитро', 'chat_id': 575239699, 'mess_id': 1112, 'text': 'Ярик не буянь'}
+{'time': 'M:7,D:24|| 21:46', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1114, 'text': '/start'}
+{'time': 'M:7,D:24|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1116, 'text': '/start'}
+{'time': 'M:7,D:24|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1118, 'text': '/help'}
+{'time': 'M:7,D:24|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1120, 'text': '/start'}
+{'time': 'M:7,D:24|| 22:43', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1122, 'text': '/start'}
+{'time': 'M:7,D:24|| 22:43', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1124, 'text': '/products'}
+{'time': 'M:7,D:24|| 22:43', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1126, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:24|| 22:45', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1128, 'text': 'sticker', 'sticker_id': 'CAADAgADBAAD4CQFFwEKmgzMYw5YAg'}
+{'time': 'M:7,D:24|| 22:54', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1131, 'text': '/start'}
+{'time': 'M:7,D:24|| 22:54', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1135, 'text': '/products'}
+{'time': 'M:7,D:24|| 22:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1137, 'text': '/products'}
+{'time': 'M:7,D:24|| 22:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1139, 'text': '/start'}
+{'time': 'M:7,D:24|| 22:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1141, 'text': '/products'}
+{'time': 'M:7,D:24|| 22:57', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1143, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:24|| 23:32', 'username': 'DiIre', 'name': 'Дмитро', 'surname': 'Іщук', 'chat_id': 575239699, 'mess_id': 1150, 'text': '/contacts'}
+{'time': 'M:7,D:24|| 23:32', 'username': 'DiIre', 'name': 'Дмитро', 'surname': 'Іщук', 'chat_id': 575239699, 'mess_id': 1149, 'text': '/products'}
+{'time': 'M:7,D:24|| 23:32', 'username': 'DiIre', 'name': 'Дмитро', 'surname': 'Іщук', 'chat_id': 575239699, 'mess_id': 1151, 'text': '/genpass'}
+{'time': 'M:7,D:24|| 23:38', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1160, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:24|| 23:38', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1162, 'text': '/products'}
+{'time': 'M:7,D:24|| 23:41', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 1166, 'text': 'g'}

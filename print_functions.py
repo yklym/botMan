@@ -1,41 +1,51 @@
 import telebot
 import string
 import os
-import 
 import random
 import logmode
 import config
 import json
+import parse_shop
+import bot_classes
 
-def test_atb(message, bot):
+# bot.stop_polling()
+# bot.polling(none_stop=True, interval=0)
+
+# def test_atb(message, bot):
+
+
+def products_menu(message, bot):
+    keyboard = config.prod_menu
+    message_text = "Choose shop"
+
+    bot.send_message(message.chat.id, message_text, reply_markup=keyboard)
+    @bot.message_handler(commands=['start'])
+    def print_start(message):
+        bot.send_message(message.chat.id, "hello to your power!")
+        # print_functions.tell_about_start(message, bot)
+        bot.stop_polling()
+        logmode.create_log(bot, message, "command")
     
+    
+
+
+def main_menu(message, bot):
+    start_message = "Main menu:"
+    keyboard = config.mm_keyboard
+    bot.send_message(message.chat.id, start_message, reply_markup=keyboard)
+
+
 def tell_about_help(message, bot):
-    help_message = ("Hello {}.\nTo start using this bot type \
-/login option this way:\n\n*/login [your login] [password] [service]*\n\nwithout \
-using <>brackets, where [service] is optional(if None, I'll output all of the services). \
-\n*NOTE*: I'LL delete your login message in case you pass authorization \
-\n*NOTE_2*: u should be already registred in desktop application to use this bot.\
-\n/contacts for any questions or suggestions!\nAnd may the Force be with you!").format(message.from_user.first_name)
+    help_message = "Help here"
     bot.send_message(message.chat.id, help_message, parse_mode="Markdown")
 
 
 def tell_about_start(message, bot):
-    start_message = "Hello there, {}.\nYou are using password manager bot. \
-Although it still being tested and developed, you could help the project by testing it. \
-You can write me /contacts of you have any questions or suggestions\
-\nType /help for more info".format(message.from_user.first_name)
-    bot.send_message(message.chat.id, start_message)
-
-
-def tell_about_cat(message, bot):
-    directory = "./cats"
-    all_filles_in_dir = os.listdir(directory)
-    random_cat = random.choice(all_filles_in_dir)
-    img = open(directory + "/" + random_cat, "rb")
-
-    bot.send_photo(message.chat.id, img)
-    bot.send_message(message.chat.id, "Meow, shouldn't I?")
-    img.close()
+    start_message = "Hello there, {}.\nType /help for more info".format(
+        message.from_user.first_name)
+    keyboard = config.mm_keyboard
+    # test_keyboard.row("/atb", "/contacts")
+    bot.send_message(message.chat.id, start_message, reply_markup=keyboard)
 
 
 def say_hello(message, bot):
@@ -59,38 +69,7 @@ def say_hello(message, bot):
 
 def tell_about_contacts(message, bot):
     bot.send_message(
-        message.chat.id, "Write me through the telegram - @Meow_meow_meow")
-
-
-def login(message, bot):
-    input_string = message.text.split()
-    print(input_string)
-    if (len(input_string) > 4) or (len(input_string) < 3):
-        bot.send_message(
-            message.chat.id, "Incorrect input, too many or too litle arguments")
-        return
-
-    with open(config.users_login_file, "r") as read_it:
-        database = json.load(read_it)
-    read_it.close()
-    # print(database)
-    # ----------------------------------
-    if not(input_string[1] in database.keys()):
-        bot.send_message(message.chat.id, "Error, this login is not defined!")
-        return
-    if input_string[2] != database[input_string[1]]["password"]:
-        bot.send_message(message.chat.id, "Error, wrong password!")
-        return
-    # ---------------------------------
-    service_user_needs = None
-    if len(input_string) == 4:
-        service_user_needs = input_string[3]
-
-    bot.delete_message(message.chat.id, message.message_id)
-    # @todo send user his data
-    bot.send_message(
-        message.chat.id, "Authentification success!\nSending your request:")
-    # --------------------
+        message.chat.id, "Write me through the telegram - @Meow_meow_meov")
 
 
 def pass_gen(message, bot):
@@ -115,13 +94,22 @@ def pass_gen(message, bot):
                 char_list.remove("\n")
                 char_list.remove("\t")
 
-
     new_pass = ""
     for i in range(pass_length):
         new_pass += random.choice(char_list)
 
     bot.send_message(message.chat.id, new_pass)
 
+def check_if_service_name(message):
+    if(message.text == "Торгівельна мережа АТБ"):
+        config.current_service_code = config.service_codes_list.index("atb")
+        print("\n"+ config.service_list[config.current_service_code].fullname +"\ncurr index:[{}]".format(config.current_service_code))
+        return config.service_list[config.current_service_code]
+    else:
+        return bot_classes.service(code = -1)
+
+
+# def products_menu_atb(message, bot):
 
 
 # @part CONSTANTS

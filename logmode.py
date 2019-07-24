@@ -56,8 +56,14 @@ def create_log(bot, mess, mess_type=None):
     info["time"] = ("M:{},D:{}|| {}:{}").format(datetime.now(
     ).month, datetime.now().day, datetime.now().hour, datetime.now().minute)
     info["username"] = mess.chat.username
-    info["name"] = mess.chat.first_name
-    info["surname"] = mess.chat.last_name
+    # CHECK FOR NON-ENGLISH NAME
+    name_list = mess.chat.first_name.split(" ")
+    if(len(name_list )> 1):
+        info["name"] = name_list[1]
+        info["surname"] = name_list[0]
+    else:    
+        info["name"] = mess.chat.first_name
+        info["surname"] = mess.chat.last_name
     info["chat_id"] = mess.chat.id
     info["mess_id"] = mess.message_id
     if mess_type == None:
