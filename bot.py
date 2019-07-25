@@ -54,11 +54,33 @@ def gen_pass(message):
     logmode.create_log(bot, message, "command")
 
 
-@bot.message_handler(commands=['atb'])
-def atb_menu(message):
-    # print_functions.products_menu_atb(message, bot)
-    logmode.create_log(bot, message, "command")
+# @bot.message_handler(commands=['atb'])
+# def atb_menu(message):
+#     # print_functions.products_menu_atb(message, bot)
+#     logmode.create_log(bot, message, "command")
 # -------------------------------------------
+@bot.message_handler(func=lambda mess:mess.text=="<< Попередня сторінка")
+def reduce_page(message):
+    # if config.current_page == 0:
+    #     return
+    config.current_page -=1
+    print_functions.print_products(message, bot)
+    logmode.create_log(bot, message, "command")
+
+@bot.message_handler(func=lambda mess:mess.text=="Наступна сторінка >>")
+def increase_page(message):
+    # if config.current_page == 0:
+    #     return
+    config.current_page +=1
+    print_functions.print_products(message, bot)
+    logmode.create_log(bot, message, "command")
+
+@bot.message_handler(func=lambda mess:mess.text=="<< Оновити сторінку >>")
+def update_page(message):
+    # if config.current_page == 0:
+    #     return
+    print_functions.print_products(message, bot)
+    logmode.create_log(bot, message, "command")
 
 @bot.message_handler(content_types=['text'])
 def answer_text(message):
@@ -67,6 +89,7 @@ def answer_text(message):
             logmode.create_log(bot, message, "text")
         return
     elif(print_functions.check_if_service_name(message).code>=0):
+        print_functions.print_products(message, bot)
         return
     else:
         bot.send_message(message.chat.id, print_functions.responce_to_text)

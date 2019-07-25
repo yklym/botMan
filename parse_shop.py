@@ -9,12 +9,18 @@ import config
 
 # -----------------------------------------------------
 # INTERFACE FUNCTIONS
-def get_products_list(target_url, parse_shop_function, shop_code):
+def get_products_list(service_code):
+
 	#DECORATOR
+    target_url = config.service_list[service_code].url
     res = requests.get(target_url)
     htmlDocument = res.text
     start_time = time.time()
-    result = parse_shop_function(htmlDocument, target_url)
+    # FOR ATB CODE == 0
+    if(service_code == 0):
+        result = create_product_atb(htmlDocument, config.service_list[service_code].url)
+    print("\n["+str(len(result))+"]")
+
     print("--- %s seconds ---" % (time.time() - start_time))
     return result
 
@@ -143,9 +149,9 @@ def create_product_atb(string, url):
         tmp_product.description = remove_indent(description)
 
         tmp_product.details_url = url
-        tmp_product.print_product()
+        # tmp_product.print_product()
         resulting_array.append(tmp_product)
-        print(len(resulting_array))
+        # print(len(resulting_array))
 
     return resulting_array
 

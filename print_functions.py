@@ -14,19 +14,39 @@ import bot_classes
 # def test_atb(message, bot):
 
 
+def print_products(message, bot):
+    # @todo add event trigger
+    products_list = parse_shop.get_products_list(config.current_service_code)
+    index = config.current_page * config.page_size
+    for i in range(0, 5):
+        if index + i>= len(products_list):
+            break
+        details_button_markup = telebot.types.InlineKeyboardMarkup()
+        detail_button = telebot.types.InlineKeyboardButton(text="Деталі...", callback_data="1")
+        details_button_markup.add(detail_button)
+        bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
+        ), reply_markup=details_button_markup)
+
+ 
+    menu_buttons_markup = telebot.types.ReplyKeyboardMarkup(True, True)
+    if(config.current_page == 0):
+        menu_buttons_markup.row("Наступна сторінка >>")
+    elif (config.current_page >= len(products_list) // config.page_size):
+        menu_buttons_markup.row("<< Попередня сторінка")
+    else:
+        menu_buttons_markup.row("<< Попередня сторінка",
+                                "Наступна сторінка >>")
+    menu_buttons_markup.row("<< Оновити сторінку >>")
+    menu_buttons_markup.row("/menu", "/products")
+    # menu_buttons_markup.row("/")
+    bot.send_message(message.chat.id, "<<Сторінка {}/{}>>".format(config.current_page+1, len(products_list) // config.page_size + 1), reply_markup=menu_buttons_markup)
+
+
 def products_menu(message, bot):
     keyboard = config.prod_menu
     message_text = "Choose shop"
 
     bot.send_message(message.chat.id, message_text, reply_markup=keyboard)
-    @bot.message_handler(commands=['start'])
-    def print_start(message):
-        bot.send_message(message.chat.id, "hello to your power!")
-        # print_functions.tell_about_start(message, bot)
-        bot.stop_polling()
-        logmode.create_log(bot, message, "command")
-    
-    
 
 
 def main_menu(message, bot):
@@ -100,13 +120,15 @@ def pass_gen(message, bot):
 
     bot.send_message(message.chat.id, new_pass)
 
+
 def check_if_service_name(message):
     if(message.text == "Торгівельна мережа АТБ"):
         config.current_service_code = config.service_codes_list.index("atb")
-        print("\n"+ config.service_list[config.current_service_code].fullname +"\ncurr index:[{}]".format(config.current_service_code))
+        print("\n" + config.service_list[config.current_service_code].fullname +
+              "\ncurr index:[{}]".format(config.current_service_code))
         return config.service_list[config.current_service_code]
     else:
-        return bot_classes.service(code = -1)
+        return bot_classes.service(code=-1)
 
 
 # def products_menu_atb(message, bot):

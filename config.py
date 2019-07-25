@@ -36,3 +36,8 @@ service_codes_list = ["atb"]
 # SHOP CLASS SAMPLES
 service_list = []
 service_list.append(service(0, service_codes_list[0], "Торгівельна мережа АТБ", "https://www.atbmarket.com/hot/akcii/economy/",))
+
+# VARIABLES
+
+current_page = 0
+page_size = 5

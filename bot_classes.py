@@ -28,9 +28,11 @@ class product:
             "description": self.description,
             "discount": self.discount
         }
-        dict["name"] = self.name
-        dict["current_price"] = self.current_price
+        # dict["name"] = self.name
+        # dict["current_price"] = self.current_price
         return dict
+    def create_preview_text(self):
+        return """'{0}'\n//'{1}грн Стара ціна:{2}\nЗнижка: {3}""".format(self.name, self.current_price, self.old_price, self.discount)     
 # -------------------------------------------------------
 class service:
     current_page = 0
