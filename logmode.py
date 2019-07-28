@@ -16,32 +16,81 @@ def log_to_file(log_dict, log_file=None):
     else:
         return
 
+def get_user_field(username, field_name):
+    with open(config.users_file, "r") as read_it:
+        data = json.load(read_it)
+    read_it.close()
+    # ---------------------------------
+    # try:
+    #     list_json = open(users_file, "w")
+    # except:
+    #     line = "--------------->"
+    #     print(line + "\n!!!Can't open file" + users_file + '\n' + line)
+    return data[username][field_name]
+def get_user_dict(username):
+    with open(config.users_file, "r") as read_it:
+        data = json.load(read_it)
+    read_it.close()
+    # ---------------------------------
+    # try:
+    #     list_json = open(users_file, "w")
+    # except:
+    #     line = "--------------->"
+    #     print(line + "\n!!!Can't open file" + users_file + '\n' + line)
+    return data[username]
 
-def update_users(log_dict, users_file=None):
-    if(users_file != None):
-        with open(users_file, "r") as read_it:
+def update_user_field(field, value, user):
+    
+    with open(config.users_file, "r") as read_it:
+        data = json.load(read_it)
+    read_it.close()
+    # ---------------------------------
+    try:
+        list_json = open(config.users_file, "w")
+    except:
+        line = "--------------->"
+        print(line + "\n!!!00Can't open file " + config.users_file + '\n' + line)
+    # ---------------------------
+
+    if not(user in data.keys()):
+        line = "--------------->"
+        print(line + "\n!!! No user in file" + config.users_file + '\n' + line)
+    else:
+        data[user][field] = value
+        json.dump(data, list_json)
+        list_json.close()
+
+
+def update_user(log_dict):
+    if(config.users_file != None):
+        with open(config.users_file, "r") as read_it:
             data = json.load(read_it)
         read_it.close()
         # ---------------------------------
         try:
-            list_json = open(users_file, "w")
+            list_json = open(config.users_file, "w")
         except:
             line = "--------------->"
-            print(line + "\n!!!Can't open file" + users_file + '\n' + line)
+            print(line + "\n!!!Can't open file" + config.users_file + '\n' + line)
         # ---------------------------
         buf_username = log_dict["username"]
 
+        # IF USER US FIRSTLY ADDED TO FILE, CREATE JSON TEMPLATE
         if not(buf_username in data.keys()):
             data[buf_username] = {
                 "last_seen": log_dict["time"],
                 "name": log_dict["name"],
                 "surname": log_dict["surname"],
                 "chat_id": log_dict["chat_id"],
-                "activity": 1
+                "activity": 1,
+                "current_service_code": -1,
+                "urrent_page": 0,
+                "page_size": 5
             }
             json.dump(data, list_json)
             list_json.close()
         else:
+            # ELSE WE UPDATE
             data[buf_username]["activity"] += 1
             data[buf_username]["last_seen"] = log_dict["time"]
             json.dump(data, list_json)
@@ -58,10 +107,10 @@ def create_log(bot, mess, mess_type=None):
     info["username"] = mess.chat.username
     # CHECK FOR NON-ENGLISH NAME
     name_list = mess.chat.first_name.split(" ")
-    if(len(name_list )> 1):
+    if(len(name_list) > 1):
         info["name"] = name_list[1]
         info["surname"] = name_list[0]
-    else:    
+    else:
         info["name"] = mess.chat.first_name
         info["surname"] = mess.chat.last_name
     info["chat_id"] = mess.chat.id
@@ -78,7 +127,5 @@ def create_log(bot, mess, mess_type=None):
         info["text"] = "sticker"
         info["sticker_id"] = mess.sticker.file_id
     log_to_file(info, config.log_file)
-    update_users(info, config.users_file)
+    update_user(info, )
     print(info)
-
-    

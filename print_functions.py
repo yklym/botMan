@@ -7,6 +7,7 @@ import config
 import json
 import parse_shop
 import bot_classes
+import urllib.request
 
 # bot.stop_polling()
 # bot.polling(none_stop=True, interval=0)
@@ -16,22 +17,33 @@ import bot_classes
 
 def print_products(message, bot):
     # @todo add event trigger
-    products_list = parse_shop.get_products_list(config.current_service_code)
-    index = config.current_page * config.page_size
+    user_config=logmode.get_user_dict(message.chat.username)
+    products_list = parse_shop.get_products_list(user_config["current_service_code"])
+    index = user_config["current_page"] * user_config["page_size"]
+    for i in range(0, 5):
+        bot.send_message(message.chat.id, "<<<<<<<<<<<>>>>>>>>>")
     for i in range(0, 5):
         if index + i>= len(products_list):
             break
         details_button_markup = telebot.types.InlineKeyboardMarkup()
         detail_button = telebot.types.InlineKeyboardButton(text="Деталі...", callback_data="1")
         details_button_markup.add(detail_button)
+
+        filename = "prodPictures/tmpPicture.jpg"
+        urllib.request.urlretrieve(products_list[index+i].picture_url, filename)
+        picture = " "
+        picture_file = open(filename, "rb")
+        
+        picture = picture_file.read()
+        bot.send_photo(message.chat.id, picture)
         bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
         ), reply_markup=details_button_markup)
 
  
     menu_buttons_markup = telebot.types.ReplyKeyboardMarkup(True, True)
-    if(config.current_page == 0):
+    if(user_config["current_page"] == 0): 
         menu_buttons_markup.row("Наступна сторінка >>")
-    elif (config.current_page >= len(products_list) // config.page_size):
+    elif (user_config["current_page"] >= len(products_list) // user_config["page_size"]):
         menu_buttons_markup.row("<< Попередня сторінка")
     else:
         menu_buttons_markup.row("<< Попередня сторінка",
@@ -39,14 +51,19 @@ def print_products(message, bot):
     menu_buttons_markup.row("<< Оновити сторінку >>")
     menu_buttons_markup.row("/menu", "/products")
     # menu_buttons_markup.row("/")
-    bot.send_message(message.chat.id, "<<Сторінка {}/{}>>".format(config.current_page+1, len(products_list) // config.page_size + 1), reply_markup=menu_buttons_markup)
+    bot.send_message(message.chat.id, "<b>[[СТОРІНКА {}/{}]]</b>".format(user_config["current_page"] + 1, len(products_list) // user_config["page_size"] + 1), reply_markup=menu_buttons_markup, parse_mode="HTML")
 
 
 def products_menu(message, bot):
-    keyboard = config.prod_menu
+    prod_menu = telebot.types.ReplyKeyboardMarkup(True, False)
+    for service in config.service_list:
+        prod_menu.add(service.fullname)
+    
+    prod_menu.add("/menu - go to main menu")
+    # keyboard = config.prod_menu
     message_text = "Choose shop"
 
-    bot.send_message(message.chat.id, message_text, reply_markup=keyboard)
+    bot.send_message(message.chat.id, message_text, reply_markup=prod_menu)
 
 
 def main_menu(message, bot):
@@ -123,10 +140,11 @@ def pass_gen(message, bot):
 
 def check_if_service_name(message):
     if(message.text == "Торгівельна мережа АТБ"):
-        config.current_service_code = config.service_codes_list.index("atb")
-        print("\n" + config.service_list[config.current_service_code].fullname +
-              "\ncurr index:[{}]".format(config.current_service_code))
-        return config.service_list[config.current_service_code]
+        logmode.update_user_field("current_service_code", config.service_codes_list.index("atb"), message.chat.username )
+        # config.current_service_code = config.service_codes_list.index("atb")
+        # print("\n" + config.service_list[config.current_service_code].fullname +
+        #       "\ncurr index:[{}]".format(config.current_service_code))
+        return config.service_list[config.service_codes_list.index("atb")]
     else:
         return bot_classes.service(code=-1)
 

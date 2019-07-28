@@ -6,7 +6,7 @@ import telebot
 class product:
     """docstring for product"""
 
-    def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-"):
+    def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url = "-"):
         super(product, self).__init__()
         self.name = name
         self.current_price = current_price
@@ -14,6 +14,7 @@ class product:
         self.description = description
         self.discount = discount
         self.details_url = details_url
+        self.picture_url = picture_url
 
     def print_product(self):
         print("Name:[" + self.name + "] Price:[" + self.current_price + "] DISCOUNT[" +

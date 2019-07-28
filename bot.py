@@ -63,7 +63,8 @@ def gen_pass(message):
 def reduce_page(message):
     # if config.current_page == 0:
     #     return
-    config.current_page -=1
+    curr_page = logmode.get_user_field(message.chat.username, "current_page")
+    logmode.update_user_field("current_page", curr_page - 1, message.chat.username)
     print_functions.print_products(message, bot)
     logmode.create_log(bot, message, "command")
 
@@ -71,7 +72,8 @@ def reduce_page(message):
 def increase_page(message):
     # if config.current_page == 0:
     #     return
-    config.current_page +=1
+    curr_page = logmode.get_user_field(message.chat.username, "current_page")
+    logmode.update_user_field("current_page", curr_page + 1, message.chat.username)
     print_functions.print_products(message, bot)
     logmode.create_log(bot, message, "command")
 
@@ -89,6 +91,8 @@ def answer_text(message):
             logmode.create_log(bot, message, "text")
         return
     elif(print_functions.check_if_service_name(message).code>=0):
+        logmode.create_log(bot, message, "command")
+        logmode.update_user_field("current_page", 0, message.chat.username)
         print_functions.print_products(message, bot)
         return
     else:
