@@ -6,12 +6,12 @@ import print_functions
 import logmode
 
 # print(requests.get("https://api.telegram.org/bot/"+ config.token+"/getUpdates"))
-# @part INIT
+# part INIT
 
 bot = telebot.TeleBot(config.token)
 
 
-# @part FUNCTS
+# part FUNCTS
 @bot.message_handler(commands=['help'])
 def print_help(message):
     print_functions.tell_about_help(message, bot)

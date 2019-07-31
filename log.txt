@@ -347,3 +347,47 @@
 {'time': 'M:7,D:28|| 20:44', 'username': 'DiIre', 'name': 'Дмитро', 'surname': 'Іщук', 'chat_id': 575239699, 'mess_id': 2423, 'text': '<< Оновити сторінку >>'}
 {'time': 'M:7,D:28|| 20:44', 'username': 'DiIre', 'name': 'Дмитро', 'surname': 'Іщук', 'chat_id': 575239699, 'mess_id': 2442, 'text': '/products'}
 {'time': 'M:7,D:28|| 20:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2444, 'text': '<< Оновити сторінку >>'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2461, 'text': 'щьп'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2463, 'text': 'u again?'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2465, 'text': 'go away'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2467, 'text': 'just'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2469, 'text': 'go'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2471, 'text': 'help'}
+{'time': 'M:7,D:30|| 14:4', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2473, 'text': 'HELP!!!!'}
+{'time': 'M:7,D:30|| 14:5', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2475, 'text': '/help'}
+{'time': 'M:7,D:30|| 14:5', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2477, 'text': 'go fuck yourself'}
+{'time': 'M:7,D:30|| 14:5', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2479, 'text': '/start'}
+{'time': 'M:7,D:30|| 14:6', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2481, 'text': '/products'}
+{'time': 'M:7,D:30|| 14:6', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2483, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:30|| 14:6', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2500, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 14:6', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2517, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 14:8', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2534, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 14:8', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2551, 'text': '/menu'}
+{'time': 'M:7,D:30|| 14:9', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2553, 'text': '/genpass'}
+{'time': 'M:7,D:30|| 14:9', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2555, 'text': '/genpass'}
+{'time': 'M:7,D:30|| 14:9', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2557, 'text': '/genpass'}
+{'time': 'M:7,D:30|| 14:9', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2559, 'text': '/genpass'}
+{'time': 'M:7,D:30|| 14:9', 'username': 'Denatello', 'name': 'Denis', 'surname': 'Fedorchenko', 'chat_id': 406060180, 'mess_id': 2561, 'text': '/contacts'}
+{'time': 'M:7,D:30|| 19:12', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2563, 'text': '<< Оновити сторінку >>'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2580, 'text': '/menu'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2582, 'text': '/contacts'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2584, 'text': '/genpass'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2586, 'text': '/help'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2588, 'text': '/products'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2590, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2607, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 19:13', 'username': 'ZioSmith', 'name': 'Andrii', 'surname': 'Koval', 'chat_id': 379946182, 'mess_id': 2624, 'text': '<< Оновити сторінку >>'}
+{'time': 'M:7,D:30|| 21:45', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2641, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 21:45', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2658, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 21:46', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2675, 'text': '/products'}
+{'time': 'M:7,D:30|| 21:46', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2677, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:30|| 21:46', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2694, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2711, 'text': '/products'}
+{'time': 'M:7,D:30|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2713, 'text': 'Торгівельна мережа АТБ'}
+{'time': 'M:7,D:30|| 21:47', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2730, 'text': 'Наступна сторінка >>'}
+{'time': 'M:7,D:30|| 21:50', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2747, 'text': '/products'}
+{'time': 'M:7,D:30|| 21:57', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2751, 'text': '/help'}
+{'time': 'M:7,D:30|| 21:57', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2754, 'text': '/help'}
+{'time': 'M:7,D:31|| 16:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2757, 'text': '/menu - go to main menu'}
+{'time': 'M:7,D:31|| 16:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2759, 'text': '/products'}
+{'time': 'M:7,D:31|| 16:56', 'username': 'Meow_meow_meov', 'name': 'Yaroslaw', 'surname': 'Klymenko', 'chat_id': 402359805, 'mess_id': 2761, 'text': 'Торгівельна мережа АТБ'}

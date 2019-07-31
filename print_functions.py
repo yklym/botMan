@@ -35,9 +35,10 @@ def print_products(message, bot):
         picture_file = open(filename, "rb")
         
         picture = picture_file.read()
-        bot.send_photo(message.chat.id, picture)
-        bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
-        ), reply_markup=details_button_markup)
+        bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup, caption=products_list[index+i].create_preview_text())
+        # bot.send_photo(message.chat.id, picture)
+        # bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
+        # ), reply_markup=details_button_markup)
 
  
     menu_buttons_markup = telebot.types.ReplyKeyboardMarkup(True, True)
@@ -73,8 +74,8 @@ def main_menu(message, bot):
 
 
 def tell_about_help(message, bot):
-    help_message = "Help here"
-    bot.send_message(message.chat.id, help_message, parse_mode="Markdown")
+    help_message = "*Help here*"
+    bot.send_message(message.chat.id, help_message, parse_mode="Markdown")    
 
 
 def tell_about_start(message, bot):
