@@ -116,6 +116,11 @@ def answer_audio(message):
     logmode.create_log(bot, message, "sticker")
 
     # bot.stop_polling()
-
+ 
+@bot.callback_query_handler(func=lambda call: call.data.split("_")[0] == "details")
+def  test_callback(call):
+    print("CAlbback:[" + call.data+ "]")
+    print_functions.print_details_callback(call.message,call.data, bot)
+    logmode.create_log(bot, call.message, "button")
 
 bot.polling(none_stop=True, interval=0)

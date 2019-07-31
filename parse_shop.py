@@ -12,6 +12,7 @@ import config
 # INTERFACE FUNCTIONS
 def get_products_list(service_code):
     
+    service_code = int(service_code)
     start_time = time.time()
 
     target_url = config.service_list[service_code].url
@@ -45,7 +46,6 @@ def remove_indent(string):
 def create_product_atb(string , url):
     resulting_array = []
 
-    #@todo FIND FIRST ELEMENT 
     # IMAGE
     pattern = r"""attachments/product/[\w/]+.jpg"""
     image_url_list = re.findall(pattern, string)
@@ -85,8 +85,8 @@ def create_product_atb(string , url):
 
     for i in range(len(old_price_list)):
             # def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url = "-"):
-        tmp_object = product( name_list[i], new_price_list[i], old_price_list[i], url, description_list[i], discount_list[i], image_url_list[i])
-        tmp_object.print_product()
+        tmp_object = product( name_list[i], new_price_list[i], old_price_list[i], url, description_list[i], discount_list[i], "https://www.atbmarket.com/" + image_url_list[i])
+        # tmp_object.print_product()
         resulting_array.append(tmp_object)
     return resulting_array    
 

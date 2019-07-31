@@ -27,7 +27,8 @@ class product:
             "old_price": self.old_price,
             "details_url": self.details_url,
             "description": self.description,
-            "discount": self.discount
+            "discount": self.discount,
+            "picture_url": self.picture_url,
         }
         # dict["name"] = self.name
         # dict["current_price"] = self.current_price

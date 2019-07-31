@@ -17,32 +17,36 @@ import urllib.request
 
 def print_products(message, bot):
     # @todo add event trigger
-    user_config=logmode.get_user_dict(message.chat.username)
-    products_list = parse_shop.get_products_list(user_config["current_service_code"])
+    user_config = logmode.get_user_dict(message.chat.username)
+    curr_service_code = user_config["current_service_code"]
+    products_list = parse_shop.get_products_list(curr_service_code)
     index = user_config["current_page"] * user_config["page_size"]
-    for i in range(0, 5):
+    for i in range(0, 3):
         bot.send_message(message.chat.id, "<<<<<<<<<<<>>>>>>>>>")
-    for i in range(0, 5):
-        if index + i>= len(products_list):
+    for i in range(0, user_config["page_size"]):
+        if index + i >= len(products_list):
             break
         details_button_markup = telebot.types.InlineKeyboardMarkup()
-        detail_button = telebot.types.InlineKeyboardButton(text="Деталі...", callback_data="1")
+        # name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url = "-"):
+        detail_button = telebot.types.InlineKeyboardButton(
+            text="details...", callback_data="details_" + str(curr_service_code) + "_" + str(index+i))
         details_button_markup.add(detail_button)
 
         filename = "prodPictures/tmpPicture.jpg"
-        urllib.request.urlretrieve(products_list[index+i].picture_url, filename)
+        urllib.request.urlretrieve(
+            products_list[index+i].picture_url, filename)
         picture = " "
         picture_file = open(filename, "rb")
-        
+
         picture = picture_file.read()
-        bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup, caption=products_list[index+i].create_preview_text())
+        bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup,
+                       caption=products_list[index+i].create_preview_text())
         # bot.send_photo(message.chat.id, picture)
         # bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
         # ), reply_markup=details_button_markup)
 
- 
     menu_buttons_markup = telebot.types.ReplyKeyboardMarkup(True, True)
-    if(user_config["current_page"] == 0): 
+    if(user_config["current_page"] == 0):
         menu_buttons_markup.row("Наступна сторінка >>")
     elif (user_config["current_page"] >= len(products_list) // user_config["page_size"]):
         menu_buttons_markup.row("<< Попередня сторінка")
@@ -52,14 +56,42 @@ def print_products(message, bot):
     menu_buttons_markup.row("<< Оновити сторінку >>")
     menu_buttons_markup.row("/menu", "/products")
     # menu_buttons_markup.row("/")
-    bot.send_message(message.chat.id, "<b>[[СТОРІНКА {}/{}]]</b>".format(user_config["current_page"] + 1, len(products_list) // user_config["page_size"] + 1), reply_markup=menu_buttons_markup, parse_mode="HTML")
+    bot.send_message(message.chat.id, "<b>[[СТОРІНКА {}/{}]]</b>".format(user_config["current_page"] + 1, len(
+        products_list) // user_config["page_size"] + 1), reply_markup=menu_buttons_markup, parse_mode="HTML")
+
+
+def print_details_callback(message, callback_data, bot):
+    args = callback_data.split("_")
+    current_service_code = args[1]
+    product_index = int(args[2])
+
+    prod = parse_shop.get_products_list(current_service_code)[product_index]
+
+    details_button_markup = telebot.types.ReplyKeyboardMarkup(True, True)
+    details_button_markup.row("Додати в обране")
+    details_button_markup.row("<< Оновити сторінку >>")
+    details_button_markup.row("/menu", "/products")
+    # MSG TEXT
+    msg_text = "<b>Назва</b>: " + prod.name + "\n<b>Ціна зі знижкою</b>: " + prod.current_price + "\n<b>Ціна без знижки</b>: " + \
+        prod.old_price + "\n<b>Знижка</b>: " + prod.discount + "\n<b>Опис</b>: \n" + \
+        prod.description + "\n<b>Деталі</b>: <a href=\"" + prod.details_url +"\">Сайт магазину</a>"
+    # PICTURE
+    filename = "prodPictures/tmpPicture.jpg"
+    urllib.request.urlretrieve(prod.picture_url, filename)
+    picture = " "
+    picture_file = open(filename, "rb")
+    picture = picture_file.read()
+
+    # SendMSG method
+    bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup,
+                   caption=msg_text, parse_mode="HTML")
 
 
 def products_menu(message, bot):
     prod_menu = telebot.types.ReplyKeyboardMarkup(True, False)
     for service in config.service_list:
         prod_menu.add(service.fullname)
-    
+
     prod_menu.add("/menu - go to main menu")
     # keyboard = config.prod_menu
     message_text = "Choose shop"
@@ -75,7 +107,7 @@ def main_menu(message, bot):
 
 def tell_about_help(message, bot):
     help_message = "*Help here*"
-    bot.send_message(message.chat.id, help_message, parse_mode="Markdown")    
+    bot.send_message(message.chat.id, help_message, parse_mode="Markdown")
 
 
 def tell_about_start(message, bot):
@@ -141,7 +173,8 @@ def pass_gen(message, bot):
 
 def check_if_service_name(message):
     if(message.text == "Торгівельна мережа АТБ"):
-        logmode.update_user_field("current_service_code", config.service_codes_list.index("atb"), message.chat.username )
+        logmode.update_user_field("current_service_code", config.service_codes_list.index(
+            "atb"), message.chat.username)
         # config.current_service_code = config.service_codes_list.index("atb")
         # print("\n" + config.service_list[config.current_service_code].fullname +
         #       "\ncurr index:[{}]".format(config.current_service_code))
