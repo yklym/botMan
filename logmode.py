@@ -84,7 +84,7 @@ def update_user(log_dict):
                 "chat_id": log_dict["chat_id"],
                 "activity": 1,
                 "current_service_code": -1,
-                "urrent_page": 0,
+                "current_page": 0,
                 "page_size": 5
             }
             json.dump(data, list_json)

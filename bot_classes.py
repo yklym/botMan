@@ -36,7 +36,6 @@ class product:
         return """'{0}'\n//'{1}грн Стара ціна:{2}\nЗнижка: {3}""".format(self.name, self.current_price, self.old_price, self.discount)     
 # -------------------------------------------------------
 class service:
-    current_page = 0
     def __init__(self, code= -1, name = "-", fullname= "-", url = "-",products = None ):
         self.code = code
         self.name = name

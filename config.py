@@ -6,7 +6,6 @@ create_log = True  # BOOL-> printing logs to console, also may print to file
 
 users_file = "new_users.json"  # saves list of unique users, stop logging
 log_file = "log.txt"  # CASE NONE - dont log to file
-users_login_file = "logins.json"  # file with users and their logins
 
 # bot_commands="""start - press start
 #                 help - for more info
@@ -47,7 +46,3 @@ service_codes_list = ["atb"]
 service_list = []
 service_list.append(service(0, service_codes_list[0], "Торгівельна мережа АТБ", "https://www.atbmarket.com/hot/akcii/economy/",))
 
-# VARIABLES
-
-# current_page = 0
-# page_size = 5
