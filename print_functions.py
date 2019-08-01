@@ -9,14 +9,8 @@ import parse_shop
 import bot_classes
 import urllib.request
 
-# bot.stop_polling()
-# bot.polling(none_stop=True, interval=0)
-
-# def test_atb(message, bot):
-
 
 def print_products(message, bot):
-    # @todo add event trigger
     user_config = logmode.get_user_dict(message.chat.username)
     curr_service_code = user_config["current_service_code"]
     products_list = parse_shop.get_products_list(curr_service_code)
@@ -60,6 +54,21 @@ def print_products(message, bot):
         products_list) // user_config["page_size"] + 1), reply_markup=menu_buttons_markup, parse_mode="HTML")
 
 
+def delete_few_messages(msg_id, msg_number, chat_id,  bot):
+    msg_id += 1
+    for i in range(msg_id - msg_number, msg_id):
+        bot.delete_message(chat_id, i)
+
+
+def delete_products_page(message, bot):
+    # Receive users message, deletes product page
+    user_settings = logmode.get_user_dict(message.chat.username)
+    prod_array_len = len(parse_shop.get_products_list(user_settings["current_service_code"]))  
+    if user_settings["current_page"] >= (prod_array_len// user_settings["page_size"]):
+        delete_few_messages(message.message_id, (prod_array_len % user_settings["page_size"]) + 5, message.chat.id, bot)    
+        return
+    delete_few_messages(message.message_id, int(user_settings["page_size"]) + 5, message.chat.id, bot)
+
 def print_details_callback(message, callback_data, bot):
     args = callback_data.split("_")
     current_service_code = args[1]
@@ -69,12 +78,13 @@ def print_details_callback(message, callback_data, bot):
 
     details_button_markup = telebot.types.ReplyKeyboardMarkup(True, True)
     details_button_markup.row("Додати в обране")
-    details_button_markup.row("<< Оновити сторінку >>")
+    details_button_markup.row("<< Повернутися до магазину >>")
     details_button_markup.row("/menu", "/products")
     # MSG TEXT
     msg_text = "<b>Назва</b>: " + prod.name + "\n<b>Ціна зі знижкою</b>: " + prod.current_price + "\n<b>Ціна без знижки</b>: " + \
         prod.old_price + "\n<b>Знижка</b>: " + prod.discount + "\n<b>Опис</b>: \n" + \
-        prod.description + "\n<b>Деталі</b>: <a href=\"" + prod.details_url +"\">Сайт магазину</a>"
+        prod.description + "\n<b>Деталі</b>: <a href=\"" + \
+        prod.details_url + "\">Сайт магазину</a>"
     # PICTURE
     filename = "prodPictures/tmpPicture.jpg"
     urllib.request.urlretrieve(prod.picture_url, filename)
@@ -83,8 +93,10 @@ def print_details_callback(message, callback_data, bot):
     picture = picture_file.read()
 
     # SendMSG method
-    bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup,
-                   caption=msg_text, parse_mode="HTML")
+    new_msg = bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup,
+                             caption=msg_text, parse_mode="HTML")
+    print("\n{" + str(new_msg.message_id) + "}")
+    return new_msg
 
 
 def products_menu(message, bot):
@@ -142,35 +154,6 @@ def tell_about_contacts(message, bot):
         message.chat.id, "Write me through the telegram - @Meow_meow_meov")
 
 
-def pass_gen(message, bot):
-    input_string = message.text.split()
-    if (len(input_string) > 3):
-        bot.send_message(
-            message.chat.id, "Incorrect input, too many arguments")
-        return
-
-    pass_length = 8
-    char_list = list(string.digits)
-    if(len(input_string) >= 2):
-        pass_length = int(input_string[1])
-        if(len(input_string) == 3):
-            pass_strength = input_string[2]
-            if(pass_strength == "medium"):
-                char_list += string.ascii_letters
-            elif(pass_strength == "strong"):
-                char_list.clear()
-                char_list += string.printable
-                char_list.remove(" ")
-                char_list.remove("\n")
-                char_list.remove("\t")
-
-    new_pass = ""
-    for i in range(pass_length):
-        new_pass += random.choice(char_list)
-
-    bot.send_message(message.chat.id, new_pass)
-
-
 def check_if_service_name(message):
     if(message.text == "Торгівельна мережа АТБ"):
         logmode.update_user_field("current_service_code", config.service_codes_list.index(
@@ -184,7 +167,6 @@ def check_if_service_name(message):
 
 
 # def products_menu_atb(message, bot):
-
-
-# @part CONSTANTS
-responce_to_text = "Im not a chat-bot, u know.\n P.S: Maybe ur using a wrong command?"
+def responce_to_casual_text(message, bot):
+    responce_to_text = "Im not a chat-bot, u know.\n P.S: Maybe ur using a wrong command?"
+    bot.send_message(message.chat.id, responce_to_text)

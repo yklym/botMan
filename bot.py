@@ -64,6 +64,10 @@ def reduce_page(message):
     # if config.current_page == 0:
     #     return
     curr_page = logmode.get_user_field(message.chat.username, "current_page")
+    tmp_mess = message
+    # tmp_mess.message_id +=1
+    print_functions.delete_products_page(tmp_mess, bot)
+
     logmode.update_user_field("current_page", curr_page - 1, message.chat.username)
     print_functions.print_products(message, bot)
     logmode.create_log(bot, message, "command")
@@ -73,6 +77,10 @@ def increase_page(message):
     # if config.current_page == 0:
     #     return
     curr_page = logmode.get_user_field(message.chat.username, "current_page")
+    tmp_mess = message
+    # tmp_mess.message_id +=1
+    print_functions.delete_products_page(tmp_mess, bot)
+
     logmode.update_user_field("current_page", curr_page + 1, message.chat.username)
     print_functions.print_products(message, bot)
     logmode.create_log(bot, message, "command")
@@ -81,24 +89,48 @@ def increase_page(message):
 def update_page(message):
     # if config.current_page == 0:
     #     return
+    tmp_mess = message
+    # tmp_mess.message_id +=1
+    print_functions.delete_products_page(tmp_mess, bot)
+
     print_functions.print_products(message, bot)
     logmode.create_log(bot, message, "command")
 
+@bot.message_handler(func=lambda mess:mess.text=="<< Повернутися до магазину >>")
+def exit_details(message):
+    # if config.current_page == 0:
+    #     return
+    print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
+    print_functions.print_products(message, bot)
+    logmode.create_log(bot, message, "command")
+
+
+
 @bot.message_handler(content_types=['text'])
 def answer_text(message):
-    if print_functions.say_hello(message, bot):
+    if print_functions.say_hello(message, bot): # CHAT-BOT FUNCTIONS
         if config.create_log:
             logmode.create_log(bot, message, "text")
         return
-    elif(print_functions.check_if_service_name(message).code>=0):
+    elif(print_functions.check_if_service_name(message).code>=0): # IF STRING IS SHOP NAME 
         logmode.create_log(bot, message, "command")
         logmode.update_user_field("current_page", 0, message.chat.username)
+        print_functions.delete_few_messages(message.message_id, 3 , message.chat.id, bot)
         print_functions.print_products(message, bot)
         return
     else:
-        bot.send_message(message.chat.id, print_functions.responce_to_text)
+        print_functions.responce_to_casual_text(message, bot) #DEFAULT ANSWER TO STRING 
         if config.create_log:
             logmode.create_log(bot, message, "text")
+
+@bot.callback_query_handler(func=lambda call: call.data.split("_")[0] == "details")
+def  test_callback(call):
+    print("CAlbback:[" + call.data+ "]")
+    tmp_mess = bot.send_message(call.message.chat.id, ".")
+    print_functions.delete_products_page(tmp_mess, bot)
+    # bot.delete_message(tmp_mess.chat.id, tmp_mess.message_id )
+    print_functions.print_details_callback(call.message,call.data, bot)
+    logmode.create_log(bot, call.message, "button")
 
 #  FOR LOG ONLY
 @bot.message_handler(content_types=['sticker'])
@@ -117,10 +149,4 @@ def answer_audio(message):
 
     # bot.stop_polling()
  
-@bot.callback_query_handler(func=lambda call: call.data.split("_")[0] == "details")
-def  test_callback(call):
-    print("CAlbback:[" + call.data+ "]")
-    print_functions.print_details_callback(call.message,call.data, bot)
-    logmode.create_log(bot, call.message, "button")
-
 bot.polling(none_stop=True, interval=0)
