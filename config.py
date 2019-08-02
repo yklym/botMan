@@ -4,7 +4,7 @@ token = "895692386:AAHx5XyR6rk36N9ZWfIsvs02x0sV0CBwEB4"
 
 create_log = True  # BOOL-> printing logs to console, also may print to file
 
-users_file = "new_users.json"  # saves list of unique users, stop logging
+users_file = "new_users.json"  # saves list of user settings
 log_file = "log.txt"  # CASE NONE - dont log to file
 
 # bot_commands="""start - press start
@@ -15,11 +15,9 @@ log_file = "log.txt"  # CASE NONE - dont log to file
 #                 atb - atb
 #                 """
 # -----------------------------------------------
-# BOT KEYBOARD TEMPLATES
-# MAIN MENU
-mm_keyboard = telebot.types.ReplyKeyboardMarkup(True, False)
-mm_keyboard.row("/products")
-mm_keyboard.row("/help", "/contacts", "/genpass")
+main_menu_keyboard = telebot.types.ReplyKeyboardMarkup(True, False)
+main_menu_keyboard.row("Продукти ...")
+main_menu_keyboard.row("/help", "/contacts")
 # PRODUCT MENU
 # prod_menu = telebot.types.ReplyKeyboardMarkup(True, False)
 # prod_menu.add("Торгівельна мережа АТБ")

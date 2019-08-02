@@ -121,3 +121,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#TMP SAVED PICTURES
+prodPictures
+
+# FILE WITH LOGS
+log.txt

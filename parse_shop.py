@@ -62,7 +62,6 @@ def create_product_atb(string , url):
     decimals_list = re.findall(pattern, string)
     pattern = r"""<div class="promo_price">[\s]*\d+<span>([\d]+)</span>"""
     floats_list = re.findall(pattern, string)
-    # print(res.group())
     new_price_list = []
     for i in range(0, len(decimals_list)):
         new_price_list.append(decimals_list[i] + "," + floats_list[i])
@@ -70,10 +69,8 @@ def create_product_atb(string , url):
 
     # NAME / DESCRIPTION
     pattern = r"""<span class="promo_info_text">[\s]+(.+)[\s]+<span>"""
-    # res = re.search(pattern, string)
     name_list = re.findall(pattern, string)
     name_list = name_list[1::]
-    # print(remove_indent(res[0]))
     pattern = r"""<span class="promo_info_text">[\s].+[\s]+<span>[\s]+(.+)[\s]+</span>"""
     description_list = re.findall(pattern, string)
     description_list = description_list[1::]

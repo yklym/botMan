@@ -1,12 +1,9 @@
 import telebot
-# import config
-
-# -----------------------------------------------
 
 class product:
     """docstring for product"""
 
-    def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url = "-"):
+    def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url="-"):
         super(product, self).__init__()
         self.name = name
         self.current_price = current_price
@@ -30,18 +27,17 @@ class product:
             "discount": self.discount,
             "picture_url": self.picture_url,
         }
-        # dict["name"] = self.name
-        # dict["current_price"] = self.current_price
         return dict
+
     def create_preview_text(self):
-        return """'{0}'\n//'{1}грн Стара ціна:{2}\nЗнижка: {3}""".format(self.name, self.current_price, self.old_price, self.discount)     
+        return """'{0}'\n//'{1}грн Стара ціна:{2}\nЗнижка: {3}""".format(self.name, self.current_price, self.old_price, self.discount)
 # -------------------------------------------------------
+
+
 class service:
-    def __init__(self, code= -1, name = "-", fullname= "-", url = "-",products = None ):
+    def __init__(self, code=-1, name="-", fullname="-", url="-", products=None):
         self.code = code
         self.name = name
         self.fullname = fullname
         self.products = products
         self.url = url
-        # self.url = 
-

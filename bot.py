@@ -5,117 +5,111 @@ import parse_shop
 import print_functions
 import logmode
 
-# print(requests.get("https://api.telegram.org/bot/"+ config.token+"/getUpdates"))
-# part INIT
-
+# CONSTANT
 bot = telebot.TeleBot(config.token)
 
-
-# part FUNCTS
+# @part COMMANDS
 @bot.message_handler(commands=['help'])
 def print_help(message):
+    print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
     print_functions.tell_about_help(message, bot)
+    
     logmode.create_log(bot, message, "command")
 
-
-@bot.message_handler(commands=['products'])
-def print_products(message):
-    # bot.send_message(message.chat.id, "hello to your power!")
-    # print_functions.login(message, bot)
-    print_functions.products_menu(message, bot)
-    logmode.create_log(bot, message, "command")
-
+# @bot.message_handler(commands=['products'])
+# def print_products(message):
+#     # bot.send_message(message.chat.id, "hello to your power!")
+#     # print_functions.login(message, bot)
+#     print_functions.products_menu(message, bot)
+#     logmode.create_log(bot, message, "command")
 
 @bot.message_handler(commands=['start'])
 def print_start(message):
-    # bot.send_message(message.chat.id, "hello to your power!")
+    print_functions.delete_few_messages(message.message_id, 1, message.chat.id, bot)
     print_functions.tell_about_start(message, bot)
+    
     logmode.create_log(bot, message, "command")
-
 
 @bot.message_handler(commands=['menu'])
 def main_menu(message):
-    # bot.send_message(message.chat.id, "hello to your power!")
+    print_functions.delete_few_messages(message.message_id, 1, message.chat.id, bot)
     print_functions.main_menu(message, bot)
+    
     logmode.create_log(bot, message, "command")
-
 
 @bot.message_handler(commands=['contacts'])
 def send_contacts(message):
-    # bot.send_message(message.chat.id, "hello to your power!")
+    print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
     print_functions.tell_about_contacts(message, bot)
+    
     logmode.create_log(bot, message, "command")
 
-
-@bot.message_handler(commands=['genpass'])
-def gen_pass(message):
-    # bot.send_message(message.chat.id, "hello to your power!")
-    print_functions.pass_gen(message, bot)
-    logmode.create_log(bot, message, "command")
-
-
-# @bot.message_handler(commands=['atb'])
-# def atb_menu(message):
-#     # print_functions.products_menu_atb(message, bot)
-#     logmode.create_log(bot, message, "command")
-# -------------------------------------------
 @bot.message_handler(func=lambda mess:mess.text=="<< Попередня сторінка")
 def reduce_page(message):
-    # if config.current_page == 0:
-    #     return
     curr_page = logmode.get_user_field(message.chat.username, "current_page")
     tmp_mess = message
-    # tmp_mess.message_id +=1
     print_functions.delete_products_page(tmp_mess, bot)
-
     logmode.update_user_field("current_page", curr_page - 1, message.chat.username)
     print_functions.print_products(message, bot)
+    
     logmode.create_log(bot, message, "command")
 
 @bot.message_handler(func=lambda mess:mess.text=="Наступна сторінка >>")
 def increase_page(message):
-    # if config.current_page == 0:
-    #     return
     curr_page = logmode.get_user_field(message.chat.username, "current_page")
-    tmp_mess = message
-    # tmp_mess.message_id +=1
-    print_functions.delete_products_page(tmp_mess, bot)
 
+    print_functions.delete_products_page(message, bot)
     logmode.update_user_field("current_page", curr_page + 1, message.chat.username)
     print_functions.print_products(message, bot)
+    
     logmode.create_log(bot, message, "command")
 
 @bot.message_handler(func=lambda mess:mess.text=="<< Оновити сторінку >>")
 def update_page(message):
-    # if config.current_page == 0:
-    #     return
-    tmp_mess = message
-    # tmp_mess.message_id +=1
-    print_functions.delete_products_page(tmp_mess, bot)
-
+    print_functions.delete_products_page(message, bot)
     print_functions.print_products(message, bot)
+
     logmode.create_log(bot, message, "command")
 
 @bot.message_handler(func=lambda mess:mess.text=="<< Повернутися до магазину >>")
 def exit_details(message):
-    # if config.current_page == 0:
-    #     return
     print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
     print_functions.print_products(message, bot)
+    
     logmode.create_log(bot, message, "command")
 
+@bot.message_handler(func=lambda mess:mess.text=="<- Головне меню")
+def exit_product_menu(message):
+    print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
+    print_functions.main_menu(message, bot)
 
+    logmode.create_log(bot, message, "command")
+
+@bot.message_handler(func=lambda mess:mess.text=="Продукти ...")
+def exit_main_menu(message):
+    print_functions.delete_few_messages(message.message_id, 2, message.chat.id, bot)
+    print_functions.products_menu(message, bot)
+    
+    logmode.create_log(bot, message, "command")
+    
+@bot.message_handler(func=lambda mess:mess.text=="<- Вибір магазину")
+def exit_shop(message):
+    print_functions.delete_products_page(message, bot)
+    print_functions.products_menu(message, bot)
+    logmode.create_log(bot, message, "command")
 
 @bot.message_handler(content_types=['text'])
 def answer_text(message):
+    code = print_functions.check_if_service_name(message).code
     if print_functions.say_hello(message, bot): # CHAT-BOT FUNCTIONS
         if config.create_log:
             logmode.create_log(bot, message, "text")
         return
-    elif(print_functions.check_if_service_name(message).code>=0): # IF STRING IS SHOP NAME 
+    elif(code >= 0): # IF STRING IS SHOP NAME 
         logmode.create_log(bot, message, "command")
         logmode.update_user_field("current_page", 0, message.chat.username)
-        print_functions.delete_few_messages(message.message_id, 3 , message.chat.id, bot)
+        logmode.update_user_field("current_service_code", code, message.chat.username)
+        print_functions.delete_few_messages(message.message_id, 2 , message.chat.id, bot)
         print_functions.print_products(message, bot)
         return
     else:
@@ -123,6 +117,7 @@ def answer_text(message):
         if config.create_log:
             logmode.create_log(bot, message, "text")
 
+# @part CALLBACK TO INLINE KEYS
 @bot.callback_query_handler(func=lambda call: call.data.split("_")[0] == "details")
 def  test_callback(call):
     print("CAlbback:[" + call.data+ "]")
@@ -132,7 +127,7 @@ def  test_callback(call):
     print_functions.print_details_callback(call.message,call.data, bot)
     logmode.create_log(bot, call.message, "button")
 
-#  FOR LOG ONLY
+#  FOR LOG ONLY logs media 
 @bot.message_handler(content_types=['sticker'])
 def answer_sticker(message):
     logmode.create_log(bot, message, "sticker")

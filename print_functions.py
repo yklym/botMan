@@ -25,19 +25,14 @@ def print_products(message, bot):
         detail_button = telebot.types.InlineKeyboardButton(
             text="details...", callback_data="details_" + str(curr_service_code) + "_" + str(index+i))
         details_button_markup.add(detail_button)
-
+        # SAVE AND SEND PHOTO
         filename = "prodPictures/tmpPicture.jpg"
         urllib.request.urlretrieve(
             products_list[index+i].picture_url, filename)
-        picture = " "
         picture_file = open(filename, "rb")
-
         picture = picture_file.read()
-        bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup,
-                       caption=products_list[index+i].create_preview_text())
-        # bot.send_photo(message.chat.id, picture)
-        # bot.send_message(message.chat.id, products_list[index+i].create_preview_text(
-        # ), reply_markup=details_button_markup)
+
+        bot.send_photo(message.chat.id, picture, reply_markup=details_button_markup, caption=products_list[index+i].create_preview_text())
 
     menu_buttons_markup = telebot.types.ReplyKeyboardMarkup(True, True)
     if(user_config["current_page"] == 0):
@@ -48,26 +43,31 @@ def print_products(message, bot):
         menu_buttons_markup.row("<< Попередня сторінка",
                                 "Наступна сторінка >>")
     menu_buttons_markup.row("<< Оновити сторінку >>")
-    menu_buttons_markup.row("/menu", "/products")
-    # menu_buttons_markup.row("/")
+    menu_buttons_markup.row("<- Вибір магазину")
     bot.send_message(message.chat.id, "<b>[[СТОРІНКА {}/{}]]</b>".format(user_config["current_page"] + 1, len(
         products_list) // user_config["page_size"] + 1), reply_markup=menu_buttons_markup, parse_mode="HTML")
 
-
 def delete_few_messages(msg_id, msg_number, chat_id,  bot):
     msg_id += 1
-    for i in range(msg_id - msg_number, msg_id):
-        bot.delete_message(chat_id, i)
-
+    try:
+        for i in range(msg_id - msg_number, msg_id):
+            bot.delete_message(chat_id, i)
+    except:
+        bot.send_message(chat_id, "----------------------------------")
+        print("\n\n!!!ERROR DELETING MSG!!!\n\n")
+        return
 
 def delete_products_page(message, bot):
     # Receive users message, deletes product page
     user_settings = logmode.get_user_dict(message.chat.username)
-    prod_array_len = len(parse_shop.get_products_list(user_settings["current_service_code"]))  
-    if user_settings["current_page"] >= (prod_array_len// user_settings["page_size"]):
-        delete_few_messages(message.message_id, (prod_array_len % user_settings["page_size"]) + 5, message.chat.id, bot)    
+    prod_array_len = len(parse_shop.get_products_list(
+        user_settings["current_service_code"]))
+    if user_settings["current_page"] >= (prod_array_len // user_settings["page_size"]):
+        delete_few_messages(message.message_id, (prod_array_len % user_settings["page_size"]) + 5, message.chat.id, bot)
         return
-    delete_few_messages(message.message_id, int(user_settings["page_size"]) + 5, message.chat.id, bot)
+    delete_few_messages(message.message_id, int(
+        user_settings["page_size"]) + 5, message.chat.id, bot)
+
 
 def print_details_callback(message, callback_data, bot):
     args = callback_data.split("_")
@@ -79,7 +79,6 @@ def print_details_callback(message, callback_data, bot):
     details_button_markup = telebot.types.ReplyKeyboardMarkup(True, True)
     details_button_markup.row("Додати в обране")
     details_button_markup.row("<< Повернутися до магазину >>")
-    details_button_markup.row("/menu", "/products")
     # MSG TEXT
     msg_text = "<b>Назва</b>: " + prod.name + "\n<b>Ціна зі знижкою</b>: " + prod.current_price + "\n<b>Ціна без знижки</b>: " + \
         prod.old_price + "\n<b>Знижка</b>: " + prod.discount + "\n<b>Опис</b>: \n" + \
@@ -104,29 +103,30 @@ def products_menu(message, bot):
     for service in config.service_list:
         prod_menu.add(service.fullname)
 
-    prod_menu.add("/menu - go to main menu")
-    # keyboard = config.prod_menu
-    message_text = "Choose shop"
+    prod_menu.add("<- Головне меню")
+    message_text = "Виберіть магазин"
 
     bot.send_message(message.chat.id, message_text, reply_markup=prod_menu)
 
 
 def main_menu(message, bot):
     start_message = "Main menu:"
-    keyboard = config.mm_keyboard
-    bot.send_message(message.chat.id, start_message, reply_markup=keyboard)
+    bot.send_message(message.chat.id, start_message,
+                     reply_markup=config.main_menu_keyboard)
 
 
 def tell_about_help(message, bot):
     help_message = "*Help here*"
-    bot.send_message(message.chat.id, help_message, parse_mode="Markdown")
+    bot.send_message(message.chat.id, help_message,
+                     parse_mode="Markdown", reply_markup=config.main_menu_keyboard)
 
 
 def tell_about_start(message, bot):
     start_message = "Hello there, {}.\nType /help for more info".format(
         message.from_user.first_name)
-    keyboard = config.mm_keyboard
-    # test_keyboard.row("/atb", "/contacts")
+    keyboard = telebot.types.ReplyKeyboardMarkup(True, False)
+    keyboard.row("Продукти ...")
+    keyboard.row("/help", "/contacts")
     bot.send_message(message.chat.id, start_message, reply_markup=keyboard)
 
 
@@ -151,7 +151,7 @@ def say_hello(message, bot):
 
 def tell_about_contacts(message, bot):
     bot.send_message(
-        message.chat.id, "Write me through the telegram - @Meow_meow_meov")
+        message.chat.id, "Write me through the telegram - @Meow_meow_meov", reply_markup=config.main_menu_keyboard)
 
 
 def check_if_service_name(message):
@@ -165,8 +165,6 @@ def check_if_service_name(message):
     else:
         return bot_classes.service(code=-1)
 
-
-# def products_menu_atb(message, bot):
 def responce_to_casual_text(message, bot):
     responce_to_text = "Im not a chat-bot, u know.\n P.S: Maybe ur using a wrong command?"
     bot.send_message(message.chat.id, responce_to_text)

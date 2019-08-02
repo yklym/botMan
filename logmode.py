@@ -20,23 +20,12 @@ def get_user_field(username, field_name):
     with open(config.users_file, "r") as read_it:
         data = json.load(read_it)
     read_it.close()
-    # ---------------------------------
-    # try:
-    #     list_json = open(users_file, "w")
-    # except:
-    #     line = "--------------->"
-    #     print(line + "\n!!!Can't open file" + users_file + '\n' + line)
     return data[username][field_name]
 def get_user_dict(username):
     with open(config.users_file, "r") as read_it:
         data = json.load(read_it)
     read_it.close()
-    # ---------------------------------
-    # try:
-    #     list_json = open(users_file, "w")
-    # except:
-    #     line = "--------------->"
-    #     print(line + "\n!!!Can't open file" + users_file + '\n' + line)
+    
     return data[username]
 
 def update_user_field(field, value, user):
