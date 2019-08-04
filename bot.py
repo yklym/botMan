@@ -144,4 +144,4 @@ def answer_audio(message):
 
     # bot.stop_polling()
  
-bot.polling(none_stop=True, interval=0)
+bot.polling(none_stop=config.none_stop_polling, interval=0)

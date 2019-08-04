@@ -1,7 +1,7 @@
 from bot_classes import *
 token = "895692386:AAHx5XyR6rk36N9ZWfIsvs02x0sV0CBwEB4"
 
-
+none_stop_polling = True # Stop polling in case of error
 create_log = True  # BOOL-> printing logs to console, also may print to file
 
 users_file = "new_users.json"  # saves list of user settings
