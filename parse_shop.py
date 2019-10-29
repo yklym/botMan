@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 # Standart libs
 import requests  # HTTP request pip lib
 import time  # execution time
@@ -19,12 +21,13 @@ def get_products_list(service_code):
     res = requests.get(target_url)
     htmlDocument = res.text
     # FOR ATB CODE == 0
+    result = 0
     print("--- %s seconds for request: ---" % (time.time() - start_time))
     if(service_code == 0):
-        result = create_product_atb(htmlDocument, config.service_list[service_code].url)
+        result = create_product_atb(htmlDocument, service_code)
     elif service_code == 1:
         pass
-    print("\n["+str(len(result))+"]")
+    print("Objects found: ["+str(len(result))+"]")
 
     print("--- %s seconds for request + parse---" % (time.time() - start_time))
     return result
@@ -43,7 +46,8 @@ def remove_indent(string):
 # -----------------------------------------------------
 # PARSE FUNCTIONS
 
-def create_product_atb(string , url):
+def create_product_atb(string , service_code):
+    url = config.service_list[service_code].url,
     resulting_array = []
 
     # IMAGE
@@ -58,7 +62,6 @@ def create_product_atb(string , url):
 
     # NEW PRICE
     pattern = r"""<div class="promo_price">[\s]*(\d+)<span>"""
-    # res = re.search(pattern, string)
     decimals_list = re.findall(pattern, string)
     pattern = r"""<div class="promo_price">[\s]*\d+<span>([\d]+)</span>"""
     floats_list = re.findall(pattern, string)
@@ -77,12 +80,12 @@ def create_product_atb(string , url):
 
     # OLD PRICE
     pattern = r"""<span class="promo_old_price big_price">([\d\.]+)"""
-    # res = re.search(pattern, string)
     old_price_list = re.findall(pattern, string)
+
 
     for i in range(len(old_price_list)):
             # def __init__(self, name="-", current_price="-", old_price="-", details_url="-", description="-", discount="-", picture_url = "-"):
-        tmp_object = product( name_list[i], new_price_list[i], old_price_list[i], url, description_list[i], discount_list[i], "https://www.atbmarket.com/" + image_url_list[i])
+        tmp_object = product( name_list[i], new_price_list[i], old_price_list[i], url, description_list[i], discount_list[i], "https://www.atbmarket.com/" + image_url_list[i], service_code)
         # tmp_object.print_product()
         resulting_array.append(tmp_object)
     return resulting_array    
@@ -193,7 +196,7 @@ def create_product_atb(string , url):
 #     return resulting_array
 
 
-# get_products_list(0)
+# print(get_products_list(0)[0].service_code)
 # createProduct(htmlDOcument, url)
 
 # print(requests.get("https://silpo.ua/offers").text)

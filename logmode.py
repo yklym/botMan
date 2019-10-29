@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 import telebot
 import config
 from datetime import datetime
@@ -20,11 +22,28 @@ def get_user_field(username, field_name):
     with open(config.users_file, "r") as read_it:
         data = json.load(read_it)
     read_it.close()
+    if not(username in data.keys()):
+        line = "--------------->"
+        print(line + "\n!!! No user in file " + config.users_file + '\n' + line)
+
+    if not(field_name in data.values()):
+        line = "--------------->"
+        print(line + "\n!!! No value {} in file".format(field_name) + config.users_file + '\n' + line)
     return data[username][field_name]
+
+
 def get_user_dict(username):
-    with open(config.users_file, "r") as read_it:
-        data = json.load(read_it)
-    read_it.close()
+    try:
+        f = open(config.users_file, "r")
+        data = json.load(f)
+        f.close()
+    except:
+        line = "--------------->"
+
+        print(line + "\n!!!Can't open file " + config.users_file + '\n' + line)
+    # with open(config.users_file, "r") as read_it:
+    #     data = json.load(read_it)
+    # read_it.close()
     
     return data[username]
 
@@ -38,7 +57,7 @@ def update_user_field(field, value, user):
         list_json = open(config.users_file, "w")
     except:
         line = "--------------->"
-        print(line + "\n!!!00Can't open file " + config.users_file + '\n' + line)
+        print(line + "\n!!!Can't open file " + config.users_file + '\n' + line)
     # ---------------------------
 
     if not(user in data.keys()):
@@ -74,7 +93,8 @@ def update_user(log_dict):
                 "activity": 1,
                 "current_service_code": -1,
                 "current_page": 0,
-                "page_size": 5
+                "page_size": 5,
+                "favourites" : []
             }
             json.dump(data, list_json)
             list_json.close()

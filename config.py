@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from bot_classes import *
 token = "895692386:AAHx5XyR6rk36N9ZWfIsvs02x0sV0CBwEB4"
 
@@ -15,13 +18,7 @@ log_file = "log.txt"  # CASE NONE - dont log to file
 #                 atb - atb
 #                 """
 # -----------------------------------------------
-main_menu_keyboard = telebot.types.ReplyKeyboardMarkup(True, False)
-main_menu_keyboard.row("Продукти ...")
-main_menu_keyboard.row("/help", "/contacts")
-# PRODUCT MENU
-# prod_menu = telebot.types.ReplyKeyboardMarkup(True, False)
-# prod_menu.add("Торгівельна мережа АТБ")
-# prod_menu.add("/menu - go to main menu")
+
 # _---------------------------------------------
 # USER JSON TEMPLATE 
 # data[buf_username] = {
@@ -35,12 +32,55 @@ main_menu_keyboard.row("/help", "/contacts")
 #                 "page_size" : 5
 #             }
 
-# current_service_code = -1
 
 # URLS
 service_codes_list = ["atb"]
 
 # SHOP CLASS SAMPLES
 service_list = []
-service_list.append(service(0, service_codes_list[0], "Торгівельна мережа АТБ", "https://www.atbmarket.com/hot/akcii/economy/",))
+service_list.append(service(0, service_codes_list[0], u"Торгівельна мережа АТБ", "https://www.atbmarket.com/hot/akcii/economy/",))
+# favourites_code = -4
 
+
+
+
+
+
+# Bot Text Messages
+
+
+
+class msg_text:
+    def __init__(self):
+        self.arrows_delimiter =  "<<<<<<<<<<<>>>>>>>>>"
+        self.next_product_page_button = u"Наступна сторінка >>"
+        self.update_product_page_button = u"<< Оновити сторінку >>"
+        self.previous_product_page_button = u"<< Попередня сторінка"
+        self.main_menu_button = u"<- Головне меню"
+        self.main_menu_message = u"Main menu:"
+        self.exit_curr_service_button = u"<- Вибір магазину"
+        self.product_menu_button = u"Продукти ..."
+        self.help_message = u"*Help here*"
+        self.contacts_message = u"Write me through the telegram - @Meow_meow_meov"
+        self.services_menu_message = u"Виберіть магазин"
+        self.favourites_menu_button = u"|Favourites|"
+        self.reply_to_unknown_message = u"Im not a chat-bot, u know.\n P.S: Maybe ur using a wrong command?"
+
+
+    def get_help_message(self, username):
+        return "Hello there, {}.\nType /help for more info".format(username)
+    # self.main_menu
+
+bot_msg_text = msg_text()
+print(bot_msg_text.arrows_delimiter)
+
+
+# ______________________________________________________
+# Keyboards
+# ______________________________________________________
+# MAIN MENU
+main_menu_keyboard = telebot.types.ReplyKeyboardMarkup(True, False)
+main_menu_keyboard.row(bot_msg_text.product_menu_button)
+main_menu_keyboard.row(bot_msg_text.favourites_menu_button)
+main_menu_keyboard.row("/help", "/contacts")
+# 
